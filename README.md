@@ -14,8 +14,8 @@
 6. Now go to ```http://localhost:5000``` to access the home page.
 7. The homepage html code is in ```client/home.html``` has 3 buttons which lets Add, View or Delete content from the mlab test db. 
 8. Play with the app to Add, Delete and Read products from mlab test DB. You don't have to do anything specific for the db setup.
-9. You can input a non empty values for ```Product name``` and ```Product price``` input boxes. Click on ```Add``` it to the test mlab db.
-10. Click on ```View all``` to check the recently added content into mlab db. Similarly clicking on ```Delete all``` delete the contents.
+9. You can input a non empty value for ```Product name``` and ```Product price``` input boxes. Click on ```Add``` it to the test mlab db.
+10. Click on ```View all``` to check the recently added content into mlab db. Similarly clicking on ```Delete all``` delete all the contents.
 
 ### Note
 
