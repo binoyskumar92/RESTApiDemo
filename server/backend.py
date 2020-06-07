@@ -1,9 +1,9 @@
-from flask import Flask, request, Response
+from flask import Flask, request, Response, render_template
 import pymongo
 import json
 from bson.json_util import dumps
 app = Flask(
-    __name__, static_folder='/home/bsubhaku/pythonapps/lightingtalk_demo/client', static_url_path='')
+    __name__, template_folder='.././client')
 table = None
 
 
@@ -11,13 +11,18 @@ table = None
 def hello():
     return "Hello World!"
 
+@app.route("/")
+def homePage():
+    return render_template('home.html')    
+
 #------------REST API Code----------------------
 @app.route("/products", methods=['GET', 'POST', 'DELETE'])
-def test():
+def products():
     global table
     if table is None:
         table = setupDB("apifortest", "products")
 
+    # This section checks if the incoming request is GET and 'View all' content into mlab db
     if request.method == "GET":
         try:
             cursor = table.find()   # operation on table to get all data
@@ -29,6 +34,7 @@ def test():
             print("Error occured:", str(e.args))
             return Response('{"message":"Server error. Please check logs."}', status=400, mimetype='application/json')
 
+    # This section checks if the incoming request is POST and 'Add' content into mlab db
     elif request.method == "POST":
         try:
             data = request.json # retrieve parameters
@@ -37,7 +43,8 @@ def test():
         except Exception as e:
             print("Error occured:", str(e.args))
             return Response('{"message":"Server error. Please check logs."}', status=400, mimetype='application/json')
-
+    
+    # This section checks if the incoming request is DELETE and 'Delete all' content from mlab db
     elif request.method == "DELETE":
         try:
             table.remove() # delete all entries in table
