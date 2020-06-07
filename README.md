@@ -24,4 +24,4 @@ To generate requirements.txt I have used ```pipreqs``` module. You can run
    1. pip install pipreqs
    2. pipreqs -r <absolute-path-to-project-backend-folder> 
 ```
-
+In this project this file is already created and stored in root folder.
