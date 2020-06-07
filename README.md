@@ -17,7 +17,9 @@
 9. You can input a non empty values for ```Product name``` and ```Product price``` input boxes. Click on ```Add``` it to the test mlab db.
 10. Click on ```View all``` to check the recently added content into mlab db. Similarly clicking on ```Delete all``` delete the contents.
 
-*Note To generate requirements.txt I have used ```pipreqs``` module. You can run:* 
+### Note
+
+To generate requirements.txt I have used ```pipreqs``` module. You can run
 ```
    1. pip install pipreqs
    2. pipreqs -r <absolute-path-to-project-backend-folder> 
