@@ -3,7 +3,7 @@ import pymongo
 import json
 from bson.json_util import dumps
 app = Flask(
-    __name__, template_folder='.././client')
+    __name__, template_folder='./client')
 table = None
 
 
