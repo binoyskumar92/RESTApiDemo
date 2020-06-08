@@ -34,7 +34,7 @@
             var price = $('#product_price').val();
             $.ajax({
                 type: "POST",
-                url: "http://localhost:5000/products",
+                url: "/products",
                 data: JSON.stringify({ name, price }),
                 contentType: 'application/json',
                 success: function (data) {
@@ -50,7 +50,7 @@
         function viewItems() {
             $.ajax({
                 type: "GET",
-                url: "http://localhost:5000/products",
+                url: "/products",
                 success: function (data) {
                     console.log(data.message);
                     showResults(data.response);
@@ -65,7 +65,7 @@
         function deleteItems() {
             $.ajax({
                 type: "DELETE",
-                url: "http://localhost:5000/products",
+                url: "/products",
                 success: function (message,response,xhr) {
                     console.log(xhr.status);
                 },
